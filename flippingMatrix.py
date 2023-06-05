@@ -1,6 +1,7 @@
 def flippingMatrix(matrix):
   #hay que invertir la fila
   diagonal = 0
+  suma = 0
   matrix[2].reverse()
 
   fila_temporal = matrix.pop(0)
@@ -19,8 +20,14 @@ def flippingMatrix(matrix):
                 diagonal+=matrix[i][j]
         
   
-  return matrix
+  ultima = matrix[3]
+  print(matrix)
+  for i in ultima:
+     suma+= i
+  
+  print(suma)
 
+ 
 
 
 
@@ -29,4 +36,4 @@ matrix = [[112, 42, 83, 119],
          [15, 78, 101, 43],
          [62, 98, 114, 108]]
 
-print(flippingMatrix(matrix))
+flippingMatrix(matrix)
