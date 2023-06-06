@@ -1,36 +1,29 @@
 def flippingMatrix(matrix):
-  print(matrix)
-  diagonal = 0
-  suma = 0
-  matrix[2].reverse()
+   
+   #invertir la columna 83,56,101,114
+   suma = 0
+   indice_columna = 2
+   for i in range(len(matrix)//2):
+        matrix[i][indice_columna], matrix[-i-1][indice_columna] = matrix[-i-1][indice_columna], matrix[i][indice_columna]
+   
+   #invertir fila 
+   matrix[0].reverse()
+   print(matrix)
 
-  '''fila_temporal = matrix.pop(0)
+   #obtener los cuatro numeros upper-left de la matriz
+   upper_left_quadrant =  matrix[0][0], matrix[0][1], matrix[1][0], matrix[1][1] 
   
-  fila_temporal_1 = matrix.pop(2)
-  fila_temporal_2 = matrix.pop(1)
-
-  matrix.insert(3, fila_temporal)
-  matrix.insert(0, fila_temporal_1)
-  matrix.insert(1, fila_temporal_2)'''
-  for i in range(len(matrix)):
-        for j in range(len(matrix)):
-             if i == j:
-                diagonal+= matrix[i][j]
-        
-  ultima = matrix[3]
-  
-  for i in ultima:
-     suma+= i
-  
-  print(suma)
-
- 
+   #suma numeros imprimir la suma
+   ultima = upper_left_quadrant
+   
+   for i in ultima:
+      suma+= i
+   print(suma)
 
 
-
-matrix = [[112, 42, 83, 119], 
-         [56, 125, 56, 49],
-         [15, 78, 101, 43],
-         [62, 98, 114, 108]]
+matrix = ([[112, 42, 83, 119], 
+           [56, 125, 56, 49],
+           [15, 78, 101, 43],
+           [62, 98, 114, 108]])
 
 flippingMatrix(matrix)
