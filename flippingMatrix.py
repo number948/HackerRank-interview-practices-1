@@ -8,7 +8,6 @@ def flippingMatrix(matrix):
    
    #invertir fila 
    matrix[0].reverse()
-   print(matrix)
 
    #obtener los cuatro numeros upper-left de la matriz
    upper_left_quadrant =  matrix[0][0], matrix[0][1], matrix[1][0], matrix[1][1] 
